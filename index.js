@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const app = require("./");
+const app = require("./app");
 const port = process.env.PORT || 3977;
 const urlMongoDb = "mongodb+srv://DGCheca:jaroso@mdbatlas.it8sj.mongodb.net/ApiRest?retryWrites=true&w=majority";
 
