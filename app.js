@@ -2,12 +2,12 @@ const express = require("express");
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 
-// Cargar rutas
-const task_routes = require("./routes/task");
+//Cargar rutas
+const cripto_routes = require("./routes/criptomoneda");
 
-// Rutas base
-app.use("/api", task_routes);
+//rutas base
+app.use("/api", cripto_routes);
 
 module.exports = app;

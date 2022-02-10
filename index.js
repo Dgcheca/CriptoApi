@@ -1,31 +1,24 @@
 const mongoose = require("mongoose");
 const app = require("./app");
-const port = process.env.PORT || 3977;
-const urlMongoDb =
-"mongodb+srv://DGCheca:jaroso@mdbatlas.it8sj.mongodb.net/ApiRest?retryWrites=true&w=majority";
+const port = 3000;
+const urlMongoDb = "mongodb+srv://DGCheca:jaroso@mdbatlas.it8sj.mongodb.net/ApiRest?retryWrites=true&w=majority";
 
-mongoose.connect(
-  urlMongoDb,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  },
-  (err, res) => {
+mongoose.connect(urlMongoDb, (err,res) =>{
     try {
-      if (err) {
-        throw err;
-      } else {
-        console.log("La conexion a la base de datos es correcta");
+        if (err) {
+            throw err
+        } else {
+            console.log("conexion a la base de datos correcta");
 
-        app.listen(port, () => {
-          console.log(
-            `Servidor del API REST esta funcionando en http://localhost:${port}`
-          );
-        });
-      }
+            app.listen(port, ()=> {
+                console.log("A tope con el servidor en puerto: " + port);
+            });
+            
+        }
     } catch (error) {
-      console.error(error);
+        console.error(error);
     }
-  }
-);
+});
+
+
+//mongodb+srv://DGCheca:jaroso@mdbatlas.it8sj.mongodb.net/ApiRest?retryWrites=true&w=majority
