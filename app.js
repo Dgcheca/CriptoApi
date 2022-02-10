@@ -8,6 +8,6 @@ app.use(express.urlencoded({extended: true}));
 const cripto_routes = require("./routes/criptomoneda");
 
 //rutas base
-app.use("/api", cripto_routes);
+app.use("`./api", cripto_routes);
 
 module.exports = app;
